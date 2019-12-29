@@ -4,7 +4,13 @@ FROM ubuntu:bionic-20190307
 LABEL maintainer="Gabriel Cardona <gabriel.earth.engineering@gmail.com>"
 LABEL description="Docker image with Ubuntu 18, Java Developer Kit (JDK) 8, NodeJS 10 and Redis. For use with Spark ✨🔥🌎"
 LABEL url="https://www.earth.engineering"
-RUN echo "HELLO WORLD"
+ENV DEBIAN_FRONTEND=noninteractive
+ENV JAVA_HOME=/usr/lib/jvm/java-8-oracle
+ENV LANG=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
+# RUN apt-get update && wget https://deb.nodesource.com/setup_10.x && bash setup_10.x && apt-get install -y nodejs
+# RUN apt install -y --no-install-recommends redis-server && npm i -g pm2 && pm2 update
+CMD ["bash"]
 
 # Prepare the work directory
 # RUN mkdir -p earth/conf
