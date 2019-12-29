@@ -1,6 +1,6 @@
 # EARTH Spark
 
-FROM ubuntu:18.04
+FROM ubuntu:bionic-20190307
 LABEL maintainer="Gabriel Cardona <gabriel.earth.engineering@gmail.com>"
 LABEL description="Docker image with Ubuntu 18, Java Developer Kit (JDK) 8, NodeJS 10 and Redis. For use with Spark ✨🔥🌎"
 LABEL url="https://www.earth.engineering"
