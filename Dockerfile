@@ -1,10 +1,9 @@
 # EARTH Spark
 
-FROM earthengineering/ubu18jdk8node10redis
+FROM ubuntu:18.04
 LABEL maintainer="Gabriel Cardona <gabriel.earth.engineering@gmail.com>"
 LABEL description="Docker image with Ubuntu 18, Java Developer Kit (JDK) 8, NodeJS 10 and Redis. For use with Spark ✨🔥🌎"
 LABEL url="https://www.earth.engineering"
-
 RUN echo "HELLO WORLD"
 
 # Prepare the work directory
