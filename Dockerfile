@@ -1,6 +1,6 @@
 # EARTH Spark
 
-FROM ubuntu:bionic-20190307
+FROM ubuntu:bionic-20210702
 
 LABEL maintainer="Gabriel Cardona <gabriel.earth.engineering@gmail.com>"
 
@@ -26,17 +26,17 @@ RUN apt-get dist-upgrade -y
 
 RUN apt-get install gnupg apt-utils git -y 
 
-RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections 
-
-RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" > /etc/apt/sources.list.d/webupd8team-java-trusty.list 
-
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886 
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886
 
-RUN apt-get update && apt-get install -y --no-install-recommends oracle-java8-installer oracle-java8-set-default 
+RUN apt-get update && apt-get install -y --no-install-recommends openjdk-8-jdk
 
 RUN wget https://deb.nodesource.com/setup_10.x && bash setup_10.x && apt-get install -y nodejs
+
+RUN apt-get install -y software-properties-common && add-apt-repository ppa:redislabs/redis
+
+RUN apt-get update && apt-get install -y redis
 
 RUN apt-get clean all
 
